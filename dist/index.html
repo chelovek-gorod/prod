@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en_EN">
+    <head>
+        <meta charset="UTF-8">
+        <!-- title and description -->
+        <title>mars game</title>
+        <meta name="description" content="Enjoy every moment">
+        <!-- viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- styles -->
+      <script type="module" crossorigin src="./assets/index-CYGt-cnJ.js"></script>
+      <link rel="stylesheet" crossorigin href="./assets/index-f9Gfb4SE.css">
+    </head>
+
+    <body>
+        <div style="display: flex; width: 100%; height: 100%;">
+            <div style="max-width: 56rem; height: 100%; min-width: 55%; background-image: linear-gradient(45deg, aquamarine, aquamarine, lime)">
+                <div id="config-container">
+                    <style>
+                        #config-container, #control-container {padding: 20px; font-size: 18px; text-align: center;}
+                        #config-container p {margin: 5px; padding: 0}
+                        #config-container div, #config-container table {margin: 10px auto;}
+                        #config-container h2 {font-size: 24px; margin: 0; padding: 0;}
+                        #config-container td, #config-container button {cursor: pointer;}
+                        #config-container #levelSizeControlDiv span {padding: 20px;}
+                        #config-container table td {border: 2px solid black; border-radius: 6px; width: 24px; height: 24px; text-align: center;}
+                        #config-container #jsonValue {width: 100%; height: 200px; resize: none; text-align: left;}
+                    
+                        #control-container #action-stack {text-align: left; min-height: 30px; margin: 5px 20px; padding: 5px; border: 2px solid black; border-radius: 6px; font-size: 20px; background-color: white;}
+                        #control-container button {border: 2px solid black; border-radius: 6px; font-size: 20px; padding: 5px; vertical-align: middle; cursor:pointer;}
+                        #control-container button.action {width: 40px; height: 40px; text-align: center; line-height: 30px; font-size: 30px;}
+                        #control-container button.apply {display: block; width: 320px; margin: 5px auto;}
+                        #control-container #action-status {width: 250px; height: 20px; margin: 10px auto; padding: 5px; font-size: 20px; line-height: 20px; border-radius: 12px; box-shadow: inset 0px 0px 12px 0px; background-color: white;}
+                    </style>
+
+                    <h2>Настройка стартового инвентаря</h2>
+                    <p> ⚿ - ключи &nbsp;&nbsp; 🗲 - оружие </p>
+                    <table>
+                        <tbody>
+                            <tr id="inventory-line"></tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Настройка карты</h2>
+                    <p>
+                        🖰 (левая кнопка) - создать/удалить клетку<br>
+                        🖰 (правая кнопка) - добавить объект на клетку
+                    </p>
+                    <p>
+                        ⇧ - бот &nbsp;&nbsp; 🏳 - цель &nbsp;&nbsp; ⇔ - двери &nbsp;&nbsp; ⚿ - ключи <br>
+                        ➶ - оружие &nbsp;&nbsp; ⬤ - камень &nbsp;&nbsp; 🢖 - монстр
+                    </p>
+                    <div>
+                        <button id="supMapSize">-</button>
+                        <span id="valueMapSize"></span>
+                        <button id="addMapSize">+</button>
+                    </div>
+                    <table>
+                        <tbody id="map-table"></tbody>
+                    </table>
+                    <button id="applySettings">ПРИМЕНИТЬ</button>
+
+                    <p><br>JSON текущей карты</p>
+                    <textarea id="jsonValue" readonly></textarea>
+                </div>
+                <div id="control-container">
+                    <p>КОМАНДЫ:</p>
+                    <div id="action-stack"></div>
+                    <div id="action-status">Жду запуска...</div>
+                    <button class="action" id="action-left">↶</button>
+                    <button class="action" id="action-go">⬆</button>
+                    <button class="action" id="action-right">↷</button>
+                    <p style="font-size: 6px;"></p>
+                    <button class="action" id="action-get-item">❒</button>
+                    <button class="action" id="action-use-key">⚿</button>
+                    <button class="action" id="action-use-gun">➶</button>
+                    <button class="action" id="action-use-stone">⬤</button>
+                    <p> ❒ - поднять предмет &nbsp;&nbsp; ⚿ - использовать ключ &nbsp;&nbsp; ➶ - использовать оружие &nbsp;&nbsp; ⬤ - толкать камень</p>
+                    <hr>
+                    <button class="apply" id="action-clear-all">⎚ очистить все команды</button>
+                    <button class="apply" id="action-start">▶ ЗАПУСК</button>
+                    <button class="apply" id="action-clear-last">⨂ удалить последнюю команду</button>
+                    <hr>
+                    <button id="restart">перезапустить весь проект</button>
+                    <hr>
+                </div>
+            </div>
+            <div style="display: flex; width: 100%; justify-content: center; align-items: center; background-color: lime;">
+                <canvas id="canva" style="display: block; width: 100%; height: 100%;"></canvas>
+            </div>
+        </div>
+    </body>
+</html>

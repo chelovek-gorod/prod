@@ -1,0 +1,52 @@
+{"frames": {
+
+"cloud_1":
+{
+	"frame": {"x":1,"y":202,"w":340,"h":146},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":340,"h":146},
+	"sourceSize": {"w":340,"h":146}
+},
+"cloud_2":
+{
+	"frame": {"x":342,"y":202,"w":340,"h":146},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":340,"h":146},
+	"sourceSize": {"w":340,"h":146}
+},
+"cloud_3":
+{
+	"frame": {"x":505,"y":1,"w":306,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":306,"h":200},
+	"sourceSize": {"w":306,"h":200}
+},
+"cloud_4":
+{
+	"frame": {"x":1,"y":1,"w":202,"h":198},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":202,"h":198},
+	"sourceSize": {"w":202,"h":198}
+},
+"cloud_5":
+{
+	"frame": {"x":204,"y":1,"w":300,"h":146},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":146},
+	"sourceSize": {"w":300,"h":146}
+}},
+"animations": {
+	"cloud": ["cloud_1","cloud_2","cloud_3","cloud_4","cloud_5"]
+},
+"meta": {
+	"image": "clouds.webp",
+	"format": "RGBA8888",
+	"size": {"w":812,"h":349},
+	"scale": "1"
+}
+}
