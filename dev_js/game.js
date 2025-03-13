@@ -1,4 +1,4 @@
-import { Container, Sprite, TilingSprite } from "pixi.js"
+import { Container, TilingSprite, Text } from "pixi.js"
 import { EventHub, events } from './engine/events'
 import Bot from "./Bot"
 import { getAppScreen, sceneAdd } from "./engine/application"
@@ -13,6 +13,7 @@ import Stone from "./Stone"
 import Monster from "./Monster"
 import Item from "./Item"
 import Flag from "./Flag"
+import { textStyles } from "./engine/fonts"
 
 const game = {}
 
@@ -21,6 +22,19 @@ export function startGame(gameData) {
 
     game.bg = new TilingSprite(sprites.bg_1)
     sceneAdd(game.bg)
+
+    game.bg_index_text = new Text({
+        text: 'Фон № 1',
+        style: textStyles.loading
+    })
+    game.bg_index_text.scale.set(2)
+    game.bg_index_text.position.set(20, 40)
+    game.bg_info_text = new Text({
+        text: 'ПРОБЕЛ - сменить фон',
+        style: textStyles.loading
+    })
+    game.bg_info_text.scale.set(0.8)
+    game.bg_info_text.position.set(20, 20)
 
     game.mainContainer = new Container()
 
@@ -43,6 +57,8 @@ export function startGame(gameData) {
 
     sceneAdd( game.cloudContainer )
     sceneAdd( game.mainContainer )
+    sceneAdd( game.bg_index_text )
+    sceneAdd( game.bg_info_text )
 }
 
 function screenResize(screenData) { 
@@ -162,4 +178,15 @@ function fillGameArea(ceils, inventory, gameData) {
         width: maxX * CEIL_HALF_SIZE + MAP_OFFSET * 2,
         height: maxY * CEIL_QUARTER_SIZE + MAP_OFFSET + MAP_OFFSET_TOP
     })
+}
+
+let bgIndex = 1
+document.addEventListener('keyup', getKeyUp)
+function getKeyUp(event) {
+    if(event.key === ' ' && 'bg' in game) {
+        bgIndex++
+        if (bgIndex > 8) bgIndex = 1
+        game.bg.texture = sprites[`bg_${bgIndex}`]
+        game.bg_index_text.text = `Фон № ${bgIndex}`
+    }
 }

@@ -11,7 +11,15 @@ export const sprites = {
     flag_logo: 'flag_logo.webp',
     dpf_flag: 'dpf_flag.webp',
 
-    bg_1: 'n3.webp',
+    //bg_1: 'n3.webp',
+    bg_1: 'n1.png',
+    bg_2: 'n2.png',
+    bg_3: 'n3.png',
+    bg_4: 'n4.png',
+    bg_5: 'n5.png',
+    bg_6: 'n6.png',
+    bg_7: 'n7.png',
+    bg_8: 'n8.png',
 
     bird: 'bird.json',
 
